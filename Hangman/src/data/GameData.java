@@ -67,16 +67,26 @@ public class GameData implements AppDataComponent {
     private String setTargetWord() {
         URL wordsResource = getClass().getClassLoader().getResource("words/words.txt");
         assert wordsResource != null;
+        boolean validWord = false;
+        String returnMe = "";
 
-        int toSkip = new Random().nextInt(TOTAL_NUMBER_OF_STORED_WORDS);
-        try (Stream<String> lines = Files.lines(Paths.get(wordsResource.toURI()))) {
-            return lines.skip(toSkip).findFirst().get();
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
-            System.exit(1);
+        while(validWord == false) {
+            int toSkip = new Random().nextInt(TOTAL_NUMBER_OF_STORED_WORDS);
+            try (Stream<String> lines = Files.lines(Paths.get(wordsResource.toURI()))) {
+
+                returnMe = lines.skip(toSkip).findFirst().get();
+                if (returnMe.contains("'")){
+                    validWord = false;
+                }
+                else
+                    validWord = true;
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
         }
+        return returnMe;
 
-        throw new GameError("Unable to load initial target word.");
     }
 
     public GameData setTargetWord(String targetWord) {

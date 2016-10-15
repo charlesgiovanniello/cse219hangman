@@ -9,7 +9,7 @@
 <properties>
     <property_list>
         <property name="APP_WINDOW_WIDTH" value="800"/>
-        <property name="APP_WINDOW_HEIGHT" value="550"/>
+        <property name="APP_WINDOW_HEIGHT" value="700"/>
         <property name="APP_TITLE" value="Hangman"/>
         <property name="APP_LOGO" value="Logo.png"/>
         <property name="APP_PATH_CSS" value="css"/>

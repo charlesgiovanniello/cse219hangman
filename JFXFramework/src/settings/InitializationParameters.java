@@ -9,6 +9,7 @@ public enum InitializationParameters {
     WORKSPACE_PROPERTIES_XML("workspace-properties.xml"),
     PROPERTIES_SCHEMA_XSD("properties-schema.xsd"),
     CLOSE_LABEL("CLOSE"),
+    OKAY_BUTTON("Okay."),
     APP_WORKDIR_PATH("saved"),
     APP_IMAGEDIR_PATH("images");
 
