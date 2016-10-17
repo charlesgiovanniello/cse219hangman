@@ -30,7 +30,7 @@ import static settings.AppPropertyType.*;
 import static settings.InitializationParameters.APP_WORKDIR_PATH;
 
 /**
- * @author Ritwik Banerjee
+ * @author Charles Giovanniello
  */
 public class HangmanController implements FileController {
 
@@ -208,7 +208,8 @@ public class HangmanController implements FileController {
                         boolean goodguess = false;
 
                         for (int i = 0; i < progress.length; i++) {
-                            if (gamedata.getTargetWord().charAt(i) == guess) {
+                            if ( (gamedata.getTargetWord().charAt(i)) == guess) {
+                                //((Character)gamedata.getTargetWord().charAt(i)).toString().equalsIgnoreCase( ((Character)guess).toString() )
                                 //progress[i].setVisible(true);
                                 ((StackPane)littleBoxes.getChildren().get(i)).getChildren().get(1).setVisible(true);
                                 gamedata.addGoodGuess(guess);

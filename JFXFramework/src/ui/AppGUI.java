@@ -32,7 +32,7 @@ import static settings.InitializationParameters.APP_IMAGEDIR_PATH;
  * This class provides the basic user interface for this application, including all the file controls, but it does not
  * include the workspace, which should be customizable and application dependent.
  *
- * @author Richard McKenna, Ritwik Banerjee
+ * @author Richard McKenna, Ritwik Banerjee, Charles Giovanniello
  */
 public class AppGUI implements AppStyleArbiter {
 
