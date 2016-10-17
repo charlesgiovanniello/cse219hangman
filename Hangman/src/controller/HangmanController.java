@@ -166,7 +166,6 @@ public class HangmanController implements FileController {
                 dialog.show(manager.getPropertyValue(GAME_OVER_TITLE), endMessage);
                 Workspace workspace = (Workspace) appTemplate.getWorkspaceComponent();
                 littleBoxes = new HBox();
-                //littleBoxes.setVisible(false);
                 workspace.reinitialize();
             }
 

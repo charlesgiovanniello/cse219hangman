@@ -164,6 +164,25 @@ public class Workspace extends AppWorkspaceComponent {
         workspace.getChildren().add(1,littleBoxes);//add littleBoxes
 
     }
+    public void addLittleBoxesWrong(AppTemplate app){
+        littleBoxes = new HBox();
+        gamedata = (GameData) app.getDataComponent();
+        int numBoxes = gamedata.getTargetWord().length();
+
+        for(int i = 0; i < numBoxes; i++){
+            StackPane boxHolder = new StackPane();
+            littleBoxes.getChildren().add(boxHolder);
+            WordBox box = new WordBox();
+            Text letter = new Text();
+            letter.setText(Character.toString(gamedata.getTargetWord().charAt(i)));
+            boxHolder.getChildren().addAll(box,letter);
+        }
+
+
+        workspace.getChildren().add(1,littleBoxes);//add littleBoxes
+
+    }
+
 
     private void setupHandlers() {
         startGame.setOnMouseClicked(e -> controller.start());
